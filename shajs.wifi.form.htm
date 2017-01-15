@@ -50,12 +50,9 @@ function hash(hashinput, nullen, maxcount)
     var shaObj = new jsSHA("SHA-512", "TEXT"); 
     shaObj.update(hashtmp); 
     hash = shaObj.getHash("HEX");
-    //document.writeln(hashtmp);
     count=count-1;
 
     anfang=hash.substring(0,nullen);
-    //document.writeln(anfang);
-    //document.writeln(anfang==ziel);
     if(anfang==ziel)
       {fertig=true;}
     if(count==0)
@@ -67,10 +64,5 @@ function hash(hashinput, nullen, maxcount)
   a.proof.value=hashtmp;
   a.hash.value=hash;
   a.schritte.value=maxcount-count;
-  //document.writeln(hashtmp);
-  //document.writeln(hash);
-  //document.writeln(anfang);
-  //document.writeln(maxcount);
 }//function hash end
 </script>
-​
