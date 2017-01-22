@@ -9,9 +9,9 @@ document.write('<form name="form1">');
 document.write('<input type="button" name="button" value="start" onclick="start()" />');
 document.write('<input type="text" value="hashinput" maxlength="100" size="20" name="hashinput" />')
 
-document.write('<input type="text" value="2" maxlength="2" size="5" name="nullen" />');
+document.write('<input type="text" value="3" maxlength="2" size="5" name="nullen" />');
 
-document.writeln('<input type="text" value="5000" maxlength="10" size="5" name="maxcount" />');
+document.writeln('<input type="text" value="100000" maxlength="10" size="5" name="maxcount" />');
 
 document.write('<input type="text" value="proof" maxlength="150" size="150" name="proof" />');
 
@@ -47,7 +47,7 @@ function hash(hashinput, nullen, maxcount)
   while(fertig==false)
   {
     hashtmp=hashinput+hash;
-    var shaObj = new jsSHA("SHA-512", "TEXT"); 
+    var shaObj = new jsSHA("SHA-1", "TEXT"); 
     shaObj.update(hashtmp); 
     hash = shaObj.getHash("HEX");
     count=count-1;
@@ -57,7 +57,7 @@ function hash(hashinput, nullen, maxcount)
       {fertig=true;}
     if(count==0)
       {fertig=true;}
-  document.form1.proof.value='berechne, noch maximal '+count+' Schritte';
+  //document.form1.proof.value='berechne, noch maximal '+count+' Schritte';
   }//while
 
   var a = document.form1;
